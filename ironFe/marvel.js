@@ -756,7 +756,15 @@ const findCaptainAmericaMedia = () => {
 findCaptainAmericaMedia()
 
 // return a list of movies with an R rating
+const findRRatedMovies = () => {
+  const marvelMovieNames = Object.keys(marvelMovies)
+  const filteredMovies = marvelMovieNames.filter(movie => {
+    return marvelMovies[movie].rating === 'R'
+  })
+  return filteredMovies
+}
 
+findRRatedMovies()
 
 // return a list of movies with above a 8 rating on imdb
 
