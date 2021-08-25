@@ -740,7 +740,20 @@ const findAdaptedComics = () => {
 findAdaptedComics()
 
 //return an array of comics and an array of movies (concated) that feature captain America
+const findCaptainAmericaMedia = () => {
+  const marvelComicNames = Object.keys(marvelComics)
+  const marvelMovieNames = Object.keys(marvelMovies)
+  const capComics = marvelComicNames.filter(comic => {
+    return marvelComics[comic].characters.includes('Captain America')
+  })
+  const capMovies = marvelMovieNames.filter(movie => {
+    return marvelMovies[movie].characters.includes('Captain America')
+  })
+  const capMedia = capComics.concat(capMovies)
+  return capMedia
+}
 
+findCaptainAmericaMedia()
 
 // return a list of movies with an R rating
 
