@@ -703,6 +703,15 @@ const marvelComics = {
 
 
 // return a list of comics that were written before 2000
+const premillennialComics = () => {
+  const marvelComicNames = Object.keys(marvelComics)
+  const filteredComics = marvelComicNames.filter(comic => {
+    return marvelComics[comic].publishDate < 2000
+  })
+  return filteredComics
+}
+
+premillennialComics()
 
 
 // return a list of comics that were edited by stan Lee
