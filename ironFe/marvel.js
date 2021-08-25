@@ -703,7 +703,7 @@ const marvelComics = {
 
 
 // return a list of comics that were written before 2000
-const premillennialComics = () => {
+const findPremillennialComics = () => {
   const marvelComicNames = Object.keys(marvelComics)
   const filteredComics = marvelComicNames.filter(comic => {
     return marvelComics[comic].publishDate < 2000
@@ -711,10 +711,21 @@ const premillennialComics = () => {
   return filteredComics
 }
 
-premillennialComics()
+findPremillennialComics()
 
 
 // return a list of comics that were edited by stan Lee
+const findStanLeeComics = () => {
+  const marvelComicNames = Object.keys(marvelComics)
+  const filteredComics = marvelComicNames.filter(comic => {
+    if (marvelComics[comic].editors) {
+      return marvelComics[comic].editors.includes('Stan Lee')
+    }
+  })
+  return filteredComics
+}
+
+findStanLeeComics()
 
 
 // return a list of movies that were adapted
