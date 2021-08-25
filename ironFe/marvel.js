@@ -728,8 +728,16 @@ const findStanLeeComics = () => {
 findStanLeeComics()
 
 
-// return a list of movies that were adapted
+// return a list of comics that were adapted
+const findAdaptedComics = () => {
+  const marvelComicNames = Object.keys(marvelComics)
+  const filteredComics = marvelComicNames.filter(comic => {
+    return marvelComics[comic].adapted === true
+  })
+  return filteredComics
+}
 
+findAdaptedComics()
 
 //return an array of comics and an array of movies (concated) that feature captain America
 
