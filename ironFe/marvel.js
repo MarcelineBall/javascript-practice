@@ -780,6 +780,14 @@ findGoodMovies()
 
 // sort the movies by their ratings
 
+const findMoviesByRatings = () => {
+  const marvelMovieNames = Object.keys(marvelMovies)
+  const moviesByRatings = marvelMovieNames.sort((a, b) => {
+    return marvelMovies[a].imdbRating - marvelMovies[b].imdbRating
+  })
+  return moviesByRatings
+}
 
+findMoviesByRatings()
 
 // create an object with each character as the key and the movies they appear in as the value
