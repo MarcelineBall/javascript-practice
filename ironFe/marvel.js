@@ -768,6 +768,15 @@ findRRatedMovies()
 
 // return a list of movies with above a 8 rating on imdb
 
+const findGoodMovies = () => {
+  const marvelMovieNames = Object.keys(marvelMovies)
+  const filteredMovies = marvelMovieNames.filter(movie => {
+    return marvelMovies[movie].imdbRating > 8
+  })
+  return filteredMovies
+}
+
+findGoodMovies()
 
 // sort the movies by their ratings
 
