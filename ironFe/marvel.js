@@ -791,3 +791,19 @@ const findMoviesByRatings = () => {
 findMoviesByRatings()
 
 // create an object with each character as the key and the movies they appear in as the value
+
+const listCharacterMovieAppearances = () => {
+  const marvelMovieNames = Object.keys(marvelMovies)
+  const moviesByCharacters = marvelMovieNames.reduce((acc, movie) => {
+    marvelMovies[movie].characters.forEach(char => {
+      if (!acc[char]) {
+        acc[char] = []
+      }
+      acc[char].push(marvelMovies[movie].title)
+    })
+    return acc
+  }, {})
+  return moviesByCharacters
+}
+
+listCharacterMovieAppearances()
